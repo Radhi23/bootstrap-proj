@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5e903e9b8a5c4">
+	<meta name="csrf-value" content="ffb957b45f30ac9a986725752a9f97a4">
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"02e09611df",applicationID:"156179534"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>	<meta name="cart-hash" content="d751713988987e9331980363e24189ce">
+	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>R logo Design Royalty Free Vector Image - VectorStock</title>
+	<meta name="description" content="Abstract letter R logo design template. Vector letter symbol. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions..">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933618">
+	<meta property="og:title" content="R logo Design vector image on VectorStock">
+	<meta property="og:description" content="Abstract letter R logo design template. Vector letter symbol. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+	<meta property="og:image:url" content="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+	<meta property="og:image:secure_url" content="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933618">
+	<meta name="twitter:title" content="R logo Design vector image">
+	<meta name="twitter:description" content="Abstract letter R logo design template. Vector letter symbol.">
+	<meta name="twitter:image" content="https://cdn4.vectorstock.com/i/thumb-large/36/18/r-logo-design-vector-8933618.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933618">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1584499598.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1584499598.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1585013843.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1585013843.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Categories</a></li>
+				<li><a href="/pricing" title="Pricing">Pricing</a></li>
+				<li class="account">
+					<button type="button" data-action="signup">Sign Up</button>
+					<button type="button" data-action="login">Login</button>
+				</li>
+			</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+								<li><a href="/pricing">Pricing</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/logo-vectors">
+							<span itemprop="name">Logo Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					R logo Design vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+						<noscript><img src="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg" title="R logo Design vector image" alt="R logo Design"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn4.vectorstock.com/i/thumbs/36/18/r-logo-design-vector-8933618.jpg" title="R logo Design vector image" alt="R logo Design">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="8933618">
+					<input type="hidden" id="vector_title" value="R logo Design">
+					<input type="hidden" id="vector_description" value="Abstract letter R logo design template. Vector letter symbol. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933618">
+					<input type="hidden" id="vector_media" value="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="Lecostaloca">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/pricing">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Pay-per-Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-per-Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pre-paid Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Pay-per-Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-per-Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pre-paid Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+						<!--
+						-- OPTION: Customization
+						-->
+						<div class="option" data-type="customization">
+							<h6><span class="type">New Option!</span><a href="/faq/members/what-is-hire-a-designer">What is this?</a></h6>
+							<div class="optgroup chkgroup">
+								<fieldset>
+									<label for="f_payment_customization" class="checked_">
+										<input type="checkbox" id="f_payment_customization" name="payment_customization" data-cost="84" value="customization" tabindex="12">
+										<span class="label">Customize image</span>
+										<span class="value"><small>$</small><var>84.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>Love the image but just need a few modifications? Let our talented artists do the work for you!</p>
+								<p>We'll connect you with a designer who can make updates and send you the artwork in a format of your choice.</p>
+								<h4>Examples</h4>
+								<ul>
+									<li>Change the text</li>
+									<li>Modify colors</li>
+									<li>Resize to new dimensions</li>
+									<li>Include logo or symbol</li>
+									<li>Add your company or business name</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+						<noscript><img src="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg" title="R logo Design vector image" alt="R logo Design"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn4.vectorstock.com/i/thumbs/36/18/r-logo-design-vector-8933618.jpg" title="R logo Design vector image" alt="R logo Design">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>8933618</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_Lecostaloca" rel="nofollow">Lecostaloca</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="8933618">
+					<meta itemprop="productID" content="8933618">
+					<meta itemprop="name" content="R logo Design">
+					<meta itemprop="description" content="Abstract letter R logo design template. Vector letter symbol. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2016-05-24">
+					<link itemprop="image" href="https://cdn4.vectorstock.com/i/1000x1000/36/18/r-logo-design-vector-8933618.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933618">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/93/41/letter-r-leaf-nature-logo-design-concept-template-vector-21269341.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-leaf-nature-logo-design-concept-template-vector-21269341" title="letter r leaf nature logo design concept template vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/93/41/letter-r-leaf-nature-logo-design-concept-template-vector-21269341.jpg" title="letter r leaf nature logo design concept template" alt="letter r leaf nature logo design concept template vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/73/67/green-leaf-logo-icon-design-template-vector-21867367.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-leaf-logo-icon-design-template-vector-21867367" title="green leaf logo icon design template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/73/67/green-leaf-logo-icon-design-template-vector-21867367.jpg" title="green leaf logo icon design template" alt="green leaf logo icon design template vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/34/42/initial-letter-p-logo-template-colored-green-leaf-vector-21623442.jpg"><a href="//www.vectorstock.com/royalty-free-vector/initial-letter-p-logo-template-colored-green-leaf-vector-21623442" title="initial letter p logo template colored green leaf vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/34/42/initial-letter-p-logo-template-colored-green-leaf-vector-21623442.jpg" title="initial letter p logo template colored green leaf" alt="initial letter p logo template colored green leaf vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/95/37/checkmark-green-leaf-logo-vector-22949537.jpg"><a href="//www.vectorstock.com/royalty-free-vector/checkmark-green-leaf-logo-vector-22949537" title="checkmark green leaf logo vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/95/37/checkmark-green-leaf-logo-vector-22949537.jpg" title="checkmark green leaf logo" alt="checkmark green leaf logo vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/51/05/green-bird-logo-vector-26485105.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-bird-logo-vector-26485105" title="green bird logo vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/51/05/green-bird-logo-vector-26485105.jpg" title="green bird logo" alt="green bird logo vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/71/88/organic-logo-design-template-vector-20657188.jpg"><a href="//www.vectorstock.com/royalty-free-vector/organic-logo-design-template-vector-20657188" title="organic logo design template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/71/88/organic-logo-design-template-vector-20657188.jpg" title="organic logo design template" alt="organic logo design template vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/20/42/gr-green-leaf-letter-design-logo-eco-bio-leaf-vector-20682042.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gr-green-leaf-letter-design-logo-eco-bio-leaf-vector-20682042" title="gr green leaf letter design logo eco bio leaf vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/20/42/gr-green-leaf-letter-design-logo-eco-bio-leaf-vector-20682042.jpg" title="gr green leaf letter design logo eco bio leaf" alt="gr green leaf letter design logo eco bio leaf vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/26/56/z-letter-leaf-logo-icon-download-vector-24042656.jpg"><a href="//www.vectorstock.com/royalty-free-vector/z-letter-leaf-logo-icon-download-vector-24042656" title="z letter leaf logo icon download vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/26/56/z-letter-leaf-logo-icon-download-vector-24042656.jpg" title="z letter leaf logo icon download" alt="z letter leaf logo icon download vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/90/21/letter-r-logo-monogram-minimal-style-identity-vector-20699021.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-monogram-minimal-style-identity-vector-20699021" title="letter r logo monogram minimal style identity vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/90/21/letter-r-logo-monogram-minimal-style-identity-vector-20699021.jpg" title="letter r logo monogram minimal style identity" alt="letter r logo monogram minimal style identity vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/66/39/letter-r-letter-geometric-isolated-vector-28396639.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-letter-geometric-isolated-vector-28396639" title="letter r letter geometric isolated vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/66/39/letter-r-letter-geometric-isolated-vector-28396639.jpg" title="letter r letter geometric isolated" alt="letter r letter geometric isolated vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/44/99/nature-letter-r-logo-icon-design-vector-22794499.jpg"><a href="//www.vectorstock.com/royalty-free-vector/nature-letter-r-logo-icon-design-vector-22794499" title="nature letter r logo icon design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/44/99/nature-letter-r-logo-icon-design-vector-22794499.jpg" title="nature letter r logo icon design" alt="nature letter r logo icon design vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/65/88/abstract-beauty-creative-logo-isolated-on-vector-23516588.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-beauty-creative-logo-isolated-on-vector-23516588" title="abstract beauty creative logo isolated on vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/65/88/abstract-beauty-creative-logo-isolated-on-vector-23516588.jpg" title="abstract beauty creative logo isolated on" alt="abstract beauty creative logo isolated on vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/21/22/letter-r-logo-set-color-icon-templates-design-vector-12762122.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-set-color-icon-templates-design-vector-12762122" title="Letter R logo set Color icon templates design vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/21/22/letter-r-logo-set-color-icon-templates-design-vector-12762122.jpg" title="Letter R logo set Color icon templates design" alt="Letter R logo set Color icon templates design vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/20/77/capital-r-letter-is-inserted-in-the-paper-slot-to-vector-18352077.jpg"><a href="//www.vectorstock.com/royalty-free-vector/capital-r-letter-is-inserted-in-the-paper-slot-to-vector-18352077" title="capital r letter is inserted in the paper slot to vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/20/77/capital-r-letter-is-inserted-in-the-paper-slot-to-vector-18352077.jpg" title="capital r letter is inserted in the paper slot to" alt="capital r letter is inserted in the paper slot to vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/26/47/letter-e-bio-organic-logo-icon-vector-6242647.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-e-bio-organic-logo-icon-vector-6242647" title="letter e bio organic logo icon vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/26/47/letter-e-bio-organic-logo-icon-vector-6242647.jpg" title="letter e bio organic logo icon" alt="letter e bio organic logo icon vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/77/31/letter-r-logo-flat-style-of-vector-6767731.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-flat-style-of-vector-6767731" title="Letter R logo flat style of vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/77/31/letter-r-logo-flat-style-of-vector-6767731.jpg" title="Letter R logo flat style of" alt="Letter R logo flat style of vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/18/38/round-g-leaf-organic-logo-vector-27761838.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-g-leaf-organic-logo-vector-27761838" title="round g leaf organic logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/18/38/round-g-leaf-organic-logo-vector-27761838.jpg" title="round g leaf organic logo" alt="round g leaf organic logo vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/66/24/letter-r-logo-vector-6306624.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-vector-6306624" title="Letter R logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/66/24/letter-r-logo-vector-6306624.jpg" title="Letter R logo" alt="Letter R logo vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/57/82/logo-with-letter-r-initial-monogram-logotype-r-vector-24235782.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-with-letter-r-initial-monogram-logotype-r-vector-24235782" title="logo with letter r initial monogram logotype r vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/57/82/logo-with-letter-r-initial-monogram-logotype-r-vector-24235782.jpg" title="logo with letter r initial monogram logotype r" alt="logo with letter r initial monogram logotype r vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/32/92/letter-u-leaf-logo-vector-23213292.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-u-leaf-logo-vector-23213292" title="letter u leaf logo vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/32/92/letter-u-leaf-logo-vector-23213292.jpg" title="letter u leaf logo" alt="letter u leaf logo vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="26126670" data-title="simple elegant initial letter type r logo sign" data-src="https://cdn1.vectorstock.com/i/thumbs/66/70/simple-elegant-initial-letter-type-r-logo-sign-vector-26126670.jpg"><a href="//www.vectorstock.com/royalty-free-vector/simple-elegant-initial-letter-type-r-logo-sign-vector-26126670" title="simple elegant initial letter type r logo sign vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/66/70/simple-elegant-initial-letter-type-r-logo-sign-vector-26126670.jpg" title="simple elegant initial letter type r logo sign" alt="simple elegant initial letter type r logo sign vector image"></noscript></a></li>
+						<li data-id="21249221" data-title="line letter r company logo" data-src="https://cdn2.vectorstock.com/i/thumbs/92/21/line-letter-r-company-logo-vector-21249221.jpg"><a href="//www.vectorstock.com/royalty-free-vector/line-letter-r-company-logo-vector-21249221" title="line letter r company logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/92/21/line-letter-r-company-logo-vector-21249221.jpg" title="line letter r company logo" alt="line letter r company logo vector image"></noscript></a></li>
+						<li data-id="19720799" data-title="r monogram r logo" data-src="https://cdn5.vectorstock.com/i/thumbs/07/99/r-monogram-r-logo-vector-19720799.jpg"><a href="//www.vectorstock.com/royalty-free-vector/r-monogram-r-logo-vector-19720799" title="r monogram r logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/07/99/r-monogram-r-logo-vector-19720799.jpg" title="r monogram r logo" alt="r monogram r logo vector image"></noscript></a></li>
+						<li data-id="17464277" data-title="unique letter r logo design template" data-src="https://cdn3.vectorstock.com/i/thumbs/42/77/unique-letter-r-logo-design-template-vector-17464277.jpg"><a href="//www.vectorstock.com/royalty-free-vector/unique-letter-r-logo-design-template-vector-17464277" title="unique letter r logo design template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/42/77/unique-letter-r-logo-design-template-vector-17464277.jpg" title="unique letter r logo design template" alt="unique letter r logo design template vector image"></noscript></a></li>
+						<li data-id="21416173" data-title="letter logo collection r-z" data-src="https://cdn4.vectorstock.com/i/thumbs/61/73/letter-logo-collection-r-z-vector-21416173.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-logo-collection-r-z-vector-21416173" title="letter logo collection r-z vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/61/73/letter-logo-collection-r-z-vector-21416173.jpg" title="letter logo collection r-z" alt="letter logo collection r-z vector image"></noscript></a></li>
+						<li data-id="27936800" data-title="logo design with combination letter r and square" data-src="https://cdn1.vectorstock.com/i/thumbs/68/00/logo-design-with-combination-letter-r-and-square-vector-27936800.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-design-with-combination-letter-r-and-square-vector-27936800" title="logo design with combination letter r and square vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/68/00/logo-design-with-combination-letter-r-and-square-vector-27936800.jpg" title="logo design with combination letter r and square" alt="logo design with combination letter r and square vector image"></noscript></a></li>
+						<li data-id="22329751" data-title="modern letter r and s rs sr s r logo" data-src="https://cdn2.vectorstock.com/i/thumbs/97/51/modern-letter-r-and-s-rs-sr-s-r-logo-vector-22329751.jpg"><a href="//www.vectorstock.com/royalty-free-vector/modern-letter-r-and-s-rs-sr-s-r-logo-vector-22329751" title="modern letter r and s rs sr s r logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/97/51/modern-letter-r-and-s-rs-sr-s-r-logo-vector-22329751.jpg" title="modern letter r and s rs sr s r logo" alt="modern letter r and s rs sr s r logo vector image"></noscript></a></li>
+						<li data-id="3590104" data-title="The letter of the alphabet" data-src="https://cdn5.vectorstock.com/i/thumbs/01/04/the-letter-of-the-alphabet-vector-3590104.jpg"><a href="//www.vectorstock.com/royalty-free-vector/the-letter-of-the-alphabet-vector-3590104" title="The letter of the alphabet vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/01/04/the-letter-of-the-alphabet-vector-3590104.jpg" title="The letter of the alphabet" alt="The letter of the alphabet vector image"></noscript></a></li>
+						<li data-id="24864200" data-title="letter ar logo design template elements" data-src="https://cdn1.vectorstock.com/i/thumbs/42/00/letter-ar-logo-design-template-elements-vector-24864200.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-ar-logo-design-template-elements-vector-24864200" title="letter ar logo design template elements vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/42/00/letter-ar-logo-design-template-elements-vector-24864200.jpg" title="letter ar logo design template elements" alt="letter ar logo design template elements vector image"></noscript></a></li>
+						<li data-id="22375856" data-title="double letter r logo icon with two white r on" data-src="https://cdn2.vectorstock.com/i/thumbs/58/56/double-letter-r-logo-icon-with-two-white-r-on-vector-22375856.jpg"><a href="//www.vectorstock.com/royalty-free-vector/double-letter-r-logo-icon-with-two-white-r-on-vector-22375856" title="double letter r logo icon with two white r on vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/58/56/double-letter-r-logo-icon-with-two-white-r-on-vector-22375856.jpg" title="double letter r logo icon with two white r on" alt="double letter r logo icon with two white r on vector image"></noscript></a></li>
+						<li data-id="24431845" data-title="nature b logo designs" data-src="https://cdn1.vectorstock.com/i/thumbs/18/45/nature-b-logo-designs-vector-24431845.jpg"><a href="//www.vectorstock.com/royalty-free-vector/nature-b-logo-designs-vector-24431845" title="nature b logo designs vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/18/45/nature-b-logo-designs-vector-24431845.jpg" title="nature b logo designs" alt="nature b logo designs vector image"></noscript></a></li>
+						<li data-id="2806927" data-title="Logo letter R company design template" data-src="https://cdn3.vectorstock.com/i/thumbs/69/27/logo-letter-r-company-design-template-vector-2806927.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-letter-r-company-design-template-vector-2806927" title="Logo letter R company design template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/69/27/logo-letter-r-company-design-template-vector-2806927.jpg" title="Logo letter R company design template" alt="Logo letter R company design template vector image"></noscript></a></li>
+						<li data-id="25937958" data-title="letter q and r template logo design" data-src="https://cdn4.vectorstock.com/i/thumbs/79/58/letter-q-and-r-template-logo-design-vector-25937958.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-q-and-r-template-logo-design-vector-25937958" title="letter q and r template logo design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/79/58/letter-q-and-r-template-logo-design-vector-25937958.jpg" title="letter q and r template logo design" alt="letter q and r template logo design vector image"></noscript></a></li>
+						<li data-id="24232509" data-title="m letter logo template" data-src="https://cdn5.vectorstock.com/i/thumbs/25/09/m-letter-logo-template-vector-24232509.jpg"><a href="//www.vectorstock.com/royalty-free-vector/m-letter-logo-template-vector-24232509" title="m letter logo template vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/25/09/m-letter-logo-template-vector-24232509.jpg" title="m letter logo template" alt="m letter logo template vector image"></noscript></a></li>
+						<li data-id="16941815" data-title="abstract curl b logos" data-src="https://cdn1.vectorstock.com/i/thumbs/18/15/abstract-curl-b-logos-vector-16941815.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-curl-b-logos-vector-16941815" title="abstract curl b logos vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/18/15/abstract-curl-b-logos-vector-16941815.jpg" title="abstract curl b logos" alt="abstract curl b logos vector image"></noscript></a></li>
+						<li data-id="29014263" data-title="3d colorful letter r logo icon design template" data-src="https://cdn4.vectorstock.com/i/thumbs/42/63/3d-colorful-letter-r-logo-icon-design-template-vector-29014263.jpg"><a href="//www.vectorstock.com/royalty-free-vector/3d-colorful-letter-r-logo-icon-design-template-vector-29014263" title="3d colorful letter r logo icon design template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/42/63/3d-colorful-letter-r-logo-icon-design-template-vector-29014263.jpg" title="3d colorful letter r logo icon design template" alt="3d colorful letter r logo icon design template vector image"></noscript></a></li>
+						<li data-id="22737116" data-title="sign of the letter r" data-src="https://cdn2.vectorstock.com/i/thumbs/71/16/sign-of-the-letter-r-vector-22737116.jpg"><a href="//www.vectorstock.com/royalty-free-vector/sign-of-the-letter-r-vector-22737116" title="sign of the letter r vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/71/16/sign-of-the-letter-r-vector-22737116.jpg" title="sign of the letter r" alt="sign of the letter r vector image"></noscript></a></li>
+						<li data-id="25048523" data-title="abstract r colorful concept" data-src="https://cdn4.vectorstock.com/i/thumbs/85/23/abstract-r-colorful-concept-vector-25048523.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-r-colorful-concept-vector-25048523" title="abstract r colorful concept vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/85/23/abstract-r-colorful-concept-vector-25048523.jpg" title="abstract r colorful concept" alt="abstract r colorful concept vector image"></noscript></a></li>
+						<li data-id="17936865" data-title="logos set with letters a and b" data-src="https://cdn1.vectorstock.com/i/thumbs/68/65/logos-set-with-letters-a-and-b-vector-17936865.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logos-set-with-letters-a-and-b-vector-17936865" title="logos set with letters a and b vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/68/65/logos-set-with-letters-a-and-b-vector-17936865.jpg" title="logos set with letters a and b" alt="logos set with letters a and b vector image"></noscript></a></li>
+						<li data-id="9673283" data-title="Letter C logo Alphabet logotype design" data-src="https://cdn4.vectorstock.com/i/thumbs/32/83/letter-c-logo-alphabet-logotype-design-vector-9673283.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-c-logo-alphabet-logotype-design-vector-9673283" title="Letter C logo Alphabet logotype design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/32/83/letter-c-logo-alphabet-logotype-design-vector-9673283.jpg" title="Letter C logo Alphabet logotype design" alt="Letter C logo Alphabet logotype design vector image"></noscript></a></li>
+						<li data-id="24241958" data-title="initial s monogram logo" data-src="https://cdn4.vectorstock.com/i/thumbs/19/58/initial-s-monogram-logo-vector-24241958.jpg"><a href="//www.vectorstock.com/royalty-free-vector/initial-s-monogram-logo-vector-24241958" title="initial s monogram logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/19/58/initial-s-monogram-logo-vector-24241958.jpg" title="initial s monogram logo" alt="initial s monogram logo vector image"></noscript></a></li>
+						<li data-id="5614517" data-title="Letter R Logo Concept Icon" data-src="https://cdn3.vectorstock.com/i/thumbs/45/17/letter-r-logo-concept-icon-vector-5614517.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-concept-icon-vector-5614517" title="Letter R Logo Concept Icon vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/45/17/letter-r-logo-concept-icon-vector-5614517.jpg" title="Letter R Logo Concept Icon" alt="Letter R Logo Concept Icon vector image"></noscript></a></li>
+						<li data-id="24362564" data-title="the letter q in the form of a gear the concept of" data-src="https://cdn5.vectorstock.com/i/thumbs/25/64/the-letter-q-in-the-form-of-a-gear-the-concept-of-vector-24362564.jpg"><a href="//www.vectorstock.com/royalty-free-vector/the-letter-q-in-the-form-of-a-gear-the-concept-of-vector-24362564" title="the letter q in the form of a gear the concept of vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/25/64/the-letter-q-in-the-form-of-a-gear-the-concept-of-vector-24362564.jpg" title="the letter q in the form of a gear the concept of" alt="the letter q in the form of a gear the concept of vector image"></noscript></a></li>
+						<li data-id="23361660" data-title="green life icon for nature ecology and environment" data-src="https://cdn1.vectorstock.com/i/thumbs/16/60/green-life-icon-for-nature-ecology-and-environment-vector-23361660.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-life-icon-for-nature-ecology-and-environment-vector-23361660" title="green life icon for nature ecology and environment vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/16/60/green-life-icon-for-nature-ecology-and-environment-vector-23361660.jpg" title="green life icon for nature ecology and environment" alt="green life icon for nature ecology and environment vector image"></noscript></a></li>
+						<li data-id="30103396" data-title="letter r script initial luxury logo design" data-src="https://cdn2.vectorstock.com/i/thumbs/33/96/letter-r-script-initial-luxury-logo-design-vector-30103396.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-script-initial-luxury-logo-design-vector-30103396" title="letter r script initial luxury logo design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/33/96/letter-r-script-initial-luxury-logo-design-vector-30103396.jpg" title="letter r script initial luxury logo design" alt="letter r script initial luxury logo design vector image"></noscript></a></li>
+						<li data-id="25130965" data-title="avocado addicted funny vegan healthy t shirt print" data-src="https://cdn1.vectorstock.com/i/thumbs/09/65/avocado-addicted-funny-vegan-healthy-t-shirt-print-vector-25130965.jpg"><a href="//www.vectorstock.com/royalty-free-vector/avocado-addicted-funny-vegan-healthy-t-shirt-print-vector-25130965" title="avocado addicted funny vegan healthy t shirt print vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/09/65/avocado-addicted-funny-vegan-healthy-t-shirt-print-vector-25130965.jpg" title="avocado addicted funny vegan healthy t shirt print" alt="avocado addicted funny vegan healthy t shirt print vector image"></noscript></a></li>
+						<li data-id="20951026" data-title="white minimal modern logos vintage labels" data-src="https://cdn2.vectorstock.com/i/thumbs/10/26/white-minimal-modern-logos-vintage-labels-vector-20951026.jpg"><a href="//www.vectorstock.com/royalty-free-vector/white-minimal-modern-logos-vintage-labels-vector-20951026" title="white minimal modern logos vintage labels vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/10/26/white-minimal-modern-logos-vintage-labels-vector-20951026.jpg" title="white minimal modern logos vintage labels" alt="white minimal modern logos vintage labels vector image"></noscript></a></li>
+						<li data-id="14236005" data-title="logo template letter r in the style of a" data-src="https://cdn1.vectorstock.com/i/thumbs/60/05/logo-template-letter-r-in-the-style-of-a-vector-14236005.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-template-letter-r-in-the-style-of-a-vector-14236005" title="logo template letter r in the style of a vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/60/05/logo-template-letter-r-in-the-style-of-a-vector-14236005.jpg" title="logo template letter r in the style of a" alt="logo template letter r in the style of a vector image"></noscript></a></li>
+						<li data-id="7502947" data-title="Logotype logo template and business card template" data-src="https://cdn3.vectorstock.com/i/thumbs/29/47/logotype-logo-template-and-business-card-template-vector-7502947.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logotype-logo-template-and-business-card-template-vector-7502947" title="Logotype logo template and business card template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/29/47/logotype-logo-template-and-business-card-template-vector-7502947.jpg" title="Logotype logo template and business card template" alt="Logotype logo template and business card template vector image"></noscript></a></li>
+						<li data-id="21147015" data-title="marijuana medical logos collection neon" data-src="https://cdn1.vectorstock.com/i/thumbs/70/15/marijuana-medical-logos-collection-neon-vector-21147015.jpg"><a href="//www.vectorstock.com/royalty-free-vector/marijuana-medical-logos-collection-neon-vector-21147015" title="marijuana medical logos collection neon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/70/15/marijuana-medical-logos-collection-neon-vector-21147015.jpg" title="marijuana medical logos collection neon" alt="marijuana medical logos collection neon vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-similar-to_8933618" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_Lecostaloca" rel="nofollow">Lecostaloca</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/36/34/r-logo-design-vector-8933634.jpg"><a href="//www.vectorstock.com/royalty-free-vector/r-logo-design-vector-8933634" title="R logo Design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/36/34/r-logo-design-vector-8933634.jpg" title="R logo Design" alt="R logo Design vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/36/24/letter-r-logo-icon-design-template-elements-vector-8933624.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-icon-design-template-elements-vector-8933624" title="Letter R Logo Icon Design Template Elements vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/36/24/letter-r-logo-icon-design-template-elements-vector-8933624.jpg" title="Letter R Logo Icon Design Template Elements" alt="Letter R Logo Icon Design Template Elements vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/33/91/letter-r-logo-icon-design-template-elements-vector-8933391.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-icon-design-template-elements-vector-8933391" title="Letter R Logo Icon Design Template Elements vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/33/91/letter-r-logo-icon-design-template-elements-vector-8933391.jpg" title="Letter R Logo Icon Design Template Elements" alt="Letter R Logo Icon Design Template Elements vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/73/64/letter-r-and-s-logo-icon-design-vector-13717364.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-and-s-logo-icon-design-vector-13717364" title="letter r and s logo icon design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/73/64/letter-r-and-s-logo-icon-design-vector-13717364.jpg" title="letter r and s logo icon design" alt="letter r and s logo icon design vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/72/93/letter-s-logo-icon-design-vector-13717293.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-s-logo-icon-design-vector-13717293" title="letter s logo icon design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/72/93/letter-s-logo-icon-design-vector-13717293.jpg" title="letter s logo icon design" alt="letter s logo icon design vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/27/55/letter-x-logo-icon-design-vector-13712755.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-x-logo-icon-design-vector-13712755" title="letter x logo icon design vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/27/55/letter-x-logo-icon-design-vector-13712755.jpg" title="letter x logo icon design" alt="letter x logo icon design vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/32/83/letter-x-logo-icon-design-vector-13713283.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-x-logo-icon-design-vector-13713283" title="letter x logo icon design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/32/83/letter-x-logo-icon-design-vector-13713283.jpg" title="letter x logo icon design" alt="letter x logo icon design vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/95/11/c-letter-business-logo-design-vector-13819511.jpg"><a href="//www.vectorstock.com/royalty-free-vector/c-letter-business-logo-design-vector-13819511" title="c letter business logo design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/95/11/c-letter-business-logo-design-vector-13819511.jpg" title="c letter business logo design" alt="c letter business logo design vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/36/86/letter-a-logo-design-template-vector-8933686.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-a-logo-design-template-vector-8933686" title="Letter A Logo Design Template vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/36/86/letter-a-logo-design-template-vector-8933686.jpg" title="Letter A Logo Design Template" alt="Letter A Logo Design Template vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/61/44/letter-b-icon-logo-template-vector-13716144.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-b-icon-logo-template-vector-13716144" title="letter b icon logo template vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/61/44/letter-b-icon-logo-template-vector-13716144.jpg" title="letter b icon logo template" alt="letter b icon logo template vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="13717491" data-title="s logo icon design" data-src="https://cdn2.vectorstock.com/i/thumbs/74/91/s-logo-icon-design-vector-13717491.jpg"><a href="//www.vectorstock.com/royalty-free-vector/s-logo-icon-design-vector-13717491" title="s logo icon design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/74/91/s-logo-icon-design-vector-13717491.jpg" title="s logo icon design" alt="s logo icon design vector image vector image"></noscript></a></li>
+						<li data-id="13819625" data-title="abstract icons letter x" data-src="https://cdn1.vectorstock.com/i/thumbs/96/25/abstract-icons-letter-x-vector-13819625.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-icons-letter-x-vector-13819625" title="abstract icons letter x vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/96/25/abstract-icons-letter-x-vector-13819625.jpg" title="abstract icons letter x" alt="abstract icons letter x vector image vector image"></noscript></a></li>
+						<li data-id="8928844" data-title="Logo M and A" data-src="https://cdn5.vectorstock.com/i/thumbs/88/44/logo-m-and-a-vector-8928844.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-m-and-a-vector-8928844" title="Logo M and A vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/88/44/logo-m-and-a-vector-8928844.jpg" title="Logo M and A" alt="Logo M and A vector image vector image"></noscript></a></li>
+						<li data-id="8933543" data-title="Letter R logo design template" data-src="https://cdn4.vectorstock.com/i/thumbs/35/43/letter-r-logo-design-template-vector-8933543.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-r-logo-design-template-vector-8933543" title="Letter R logo design template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/35/43/letter-r-logo-design-template-vector-8933543.jpg" title="Letter R logo design template" alt="Letter R logo design template vector image vector image"></noscript></a></li>
+						<li data-id="8933380" data-title="Letter S Logo Icon Design Template Elements" data-src="https://cdn1.vectorstock.com/i/thumbs/33/80/letter-s-logo-icon-design-template-elements-vector-8933380.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-s-logo-icon-design-template-elements-vector-8933380" title="Letter S Logo Icon Design Template Elements vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/33/80/letter-s-logo-icon-design-template-elements-vector-8933380.jpg" title="Letter S Logo Icon Design Template Elements" alt="Letter S Logo Icon Design Template Elements vector image vector image"></noscript></a></li>
+						<li data-id="8933524" data-title="Arrow X logo design" data-src="https://cdn5.vectorstock.com/i/thumbs/35/24/arrow-x-logo-design-vector-8933524.jpg"><a href="//www.vectorstock.com/royalty-free-vector/arrow-x-logo-design-vector-8933524" title="Arrow X logo design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/35/24/arrow-x-logo-design-vector-8933524.jpg" title="Arrow X logo design" alt="Arrow X logo design vector image vector image"></noscript></a></li>
+						<li data-id="13838760" data-title="logo th letter business card" data-src="https://cdn1.vectorstock.com/i/thumbs/87/60/logo-th-letter-business-card-vector-13838760.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logo-th-letter-business-card-vector-13838760" title="logo th letter business card vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/87/60/logo-th-letter-business-card-vector-13838760.jpg" title="logo th letter business card" alt="logo th letter business card vector image vector image"></noscript></a></li>
+						<li data-id="8933375" data-title="Letters RA logo template" data-src="https://cdn1.vectorstock.com/i/thumbs/33/75/letters-ra-logo-template-vector-8933375.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letters-ra-logo-template-vector-8933375" title="Letters RA logo template vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/33/75/letters-ra-logo-template-vector-8933375.jpg" title="Letters RA logo template" alt="Letters RA logo template vector image vector image"></noscript></a></li>
+						<li data-id="8933399" data-title="Letter N Logo Icon Design Template Elements" data-src="https://cdn5.vectorstock.com/i/thumbs/33/99/letter-n-logo-icon-design-template-elements-vector-8933399.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-n-logo-icon-design-template-elements-vector-8933399" title="Letter N Logo Icon Design Template Elements vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/33/99/letter-n-logo-icon-design-template-elements-vector-8933399.jpg" title="Letter N Logo Icon Design Template Elements" alt="Letter N Logo Icon Design Template Elements vector image vector image"></noscript></a></li>
+						<li data-id="8933656" data-title="Arrow logo letter X logo design template" data-src="https://cdn2.vectorstock.com/i/thumbs/36/56/arrow-logo-letter-x-logo-design-template-vector-8933656.jpg"><a href="//www.vectorstock.com/royalty-free-vector/arrow-logo-letter-x-logo-design-template-vector-8933656" title="Arrow logo letter X logo design template vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/36/56/arrow-logo-letter-x-logo-design-template-vector-8933656.jpg" title="Arrow logo letter X logo design template" alt="Arrow logo letter X logo design template vector image vector image"></noscript></a></li>
+						<li data-id="8933383" data-title="Letters S logo template" data-src="https://cdn4.vectorstock.com/i/thumbs/33/83/letters-s-logo-template-vector-8933383.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letters-s-logo-template-vector-8933383" title="Letters S logo template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/33/83/letters-s-logo-template-vector-8933383.jpg" title="Letters S logo template" alt="Letters S logo template vector image vector image"></noscript></a></li>
+						<li data-id="8933530" data-title="Letter X logo design" data-src="https://cdn1.vectorstock.com/i/thumbs/35/30/letter-x-logo-design-vector-8933530.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-x-logo-design-vector-8933530" title="Letter X logo design vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/35/30/letter-x-logo-design-vector-8933530.jpg" title="Letter X logo design" alt="Letter X logo design vector image vector image"></noscript></a></li>
+						<li data-id="20463946" data-title="abstract logo yellow orange stripes c letter" data-src="https://cdn2.vectorstock.com/i/thumbs/39/46/abstract-logo-yellow-orange-stripes-c-letter-vector-20463946.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-logo-yellow-orange-stripes-c-letter-vector-20463946" title="abstract logo yellow orange stripes c letter vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/39/46/abstract-logo-yellow-orange-stripes-c-letter-vector-20463946.jpg" title="abstract logo yellow orange stripes c letter" alt="abstract logo yellow orange stripes c letter vector image vector image"></noscript></a></li>
+						<li data-id="13754348" data-title="ice cream card logo" data-src="https://cdn4.vectorstock.com/i/thumbs/43/48/ice-cream-card-logo-vector-13754348.jpg"><a href="//www.vectorstock.com/royalty-free-vector/ice-cream-card-logo-vector-13754348" title="ice cream card logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/43/48/ice-cream-card-logo-vector-13754348.jpg" title="ice cream card logo" alt="ice cream card logo vector image vector image"></noscript></a></li>
+						<li data-id="13716380" data-title="home care cleaning service logo idea" data-src="https://cdn1.vectorstock.com/i/thumbs/63/80/home-care-cleaning-service-logo-idea-vector-13716380.jpg"><a href="//www.vectorstock.com/royalty-free-vector/home-care-cleaning-service-logo-idea-vector-13716380" title="home care cleaning service logo idea vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/63/80/home-care-cleaning-service-logo-idea-vector-13716380.jpg" title="home care cleaning service logo idea" alt="home care cleaning service logo idea vector image vector image"></noscript></a></li>
+						<li data-id="8537028" data-title="circle abstract logo design" data-src="https://cdn4.vectorstock.com/i/thumbs/70/28/circle-abstract-logo-design-vector-8537028.jpg"><a href="//www.vectorstock.com/royalty-free-vector/circle-abstract-logo-design-vector-8537028" title="circle abstract logo design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/70/28/circle-abstract-logo-design-vector-8537028.jpg" title="circle abstract logo design" alt="circle abstract logo design vector image vector image"></noscript></a></li>
+						<li data-id="8933662" data-title="Letter G logo design template" data-src="https://cdn3.vectorstock.com/i/thumbs/36/62/letter-g-logo-design-template-vector-8933662.jpg"><a href="//www.vectorstock.com/royalty-free-vector/letter-g-logo-design-template-vector-8933662" title="Letter G logo design template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/36/62/letter-g-logo-design-template-vector-8933662.jpg" title="Letter G logo design template" alt="Letter G logo design template vector image vector image"></noscript></a></li>
+						<li data-id="8536796" data-title="abstract logo design" data-src="https://cdn2.vectorstock.com/i/thumbs/67/96/abstract-logo-design-vector-8536796.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-logo-design-vector-8536796" title="abstract logo design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/67/96/abstract-logo-design-vector-8536796.jpg" title="abstract logo design" alt="abstract logo design vector image vector image"></noscript></a></li>
+						<li data-id="8537026" data-title="circle abstract logo design" data-src="https://cdn2.vectorstock.com/i/thumbs/70/26/circle-abstract-logo-design-vector-8537026.jpg"><a href="//www.vectorstock.com/royalty-free-vector/circle-abstract-logo-design-vector-8537026" title="circle abstract logo design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/70/26/circle-abstract-logo-design-vector-8537026.jpg" title="circle abstract logo design" alt="circle abstract logo design vector image vector image"></noscript></a></li>
+						<li data-id="8536794" data-title="abstract logo design" data-src="https://cdn5.vectorstock.com/i/thumbs/67/94/abstract-logo-design-vector-8536794.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-logo-design-vector-8536794" title="abstract logo design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/67/94/abstract-logo-design-vector-8536794.jpg" title="abstract logo design" alt="abstract logo design vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_Lecostaloca" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/logo-vectors">Logo</a></li>
+					<li><a href="/royalty-free-vectors/letter-vectors">Letter</a></li>
+					<li><a href="/royalty-free-vectors/typography-vectors">Typography</a></li>
+					<li><a href="/royalty-free-vectors/life-vectors">Life</a></li>
+					<li><a href="/royalty-free-vectors/symbol-vectors">Symbol</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/r-vectors">R</a></li>
+					<li><a href="/royalty-free-vectors/sign-vectors">Sign</a></li>
+					<li><a href="/royalty-free-vectors/logos-vectors">Logos</a></li>
+					<li><a href="/royalty-free-vectors/template-vectors">Template</a></li>
+					<li><a href="/royalty-free-vectors/business-vectors">Business</a></li>
+					<li><a href="/royalty-free-vectors/designs-vectors">Designs</a></li>
+					<li><a href="/royalty-free-vectors/font-vectors">Font</a></li>
+					<li><a href="/royalty-free-vectors/natural-vectors">Natural</a></li>
+					<li><a href="/royalty-free-vectors/organic-vectors">Organic</a></li>
+					<li><a href="/royalty-free-vectors/bio-vectors">Bio</a></li>
+					<li><a href="/royalty-free-vectors/vegetables-vectors">Vegetables</a></li>
+					<li><a href="/royalty-free-vectors/corporate-vectors">Corporate</a></li>
+					<li><a href="/royalty-free-vectors/element-vectors">Element</a></li>
+					<li><a href="/royalty-free-vectors/style-vectors">Style</a></li>
+					<li><a href="/royalty-free-vectors/shapes-vectors">Shapes</a></li>
+					<li><a href="/royalty-free-vectors/logotype-vectors">Logotype</a></li>
+					<li><a href="/royalty-free-vectors/elements-vectors">Elements</a></li>
+					<li><a href="/royalty-free-vectors/lines-vectors">Lines</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/icons-vectors">Icons</a></li>
+					<li><a href="/royalty-free-vectors/shape-vectors">Shape</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/pricing" title="Pricing">Pricing</a></li>
+						<li><a href="?signup=1&contributor=1" title="Contributor Sign Up">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2020. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":45,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
